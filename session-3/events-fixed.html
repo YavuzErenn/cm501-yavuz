@@ -21,6 +21,7 @@
   .btn { display: inline-block; background: #3b2a20; color: #fff; padding: .4rem 1rem; cursor: pointer; margin-top: .5rem; }
   .row { display: flex; justify-content: space-between; border-bottom: 1px dotted #aaa; }
   footer { background: #3b2a20; color: #fff; padding: 1rem 2rem; font-size: .9rem; }
+  footer a { color: #fff; }
 </style>
 </head>
 <body>
@@ -32,7 +33,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="events.html">Events</a></li>
+      <li><a href="events.html" aria-current="page">Events</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -78,6 +79,6 @@
   </aside>
 </div>
 
-<footer>© 2026 Campus Café · <span onclick="location.href='imprint.html'">Imprint</span> · <span onclick="location.href='privacy.html'">Privacy</span></footer>
+<footer>© 2026 Campus Café · <a href="imprint.html">Imprint</a> · <a href="privacy.html">Privacy</a></footer>
 </body>
 </html>
