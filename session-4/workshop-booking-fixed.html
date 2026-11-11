@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- Lab F · Form surgery. This booking form is built badly ON PURPOSE.
+     Repair it so that it works with keyboard and screen reader. Keep the look roughly the same. -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latte Workshop</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 2rem auto;
+      max-width: 40rem;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: .25rem;
+    }
+
+    .row {
+      margin: 1rem 0;
+    }
+
+    input,
+    select,
+    textarea {
+      font: inherit;
+      padding: .4rem;
+      border: 1px solid #ddd;
+      width: 100%;
+      box-sizing: border-box;
+      color: #999;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+      width: auto;
+    }
+
+    ::placeholder {
+      color: #ccc;
+    }
+
+    .star {
+      color: red;
+    }
+
+    .help {
+      display: inline-block;
+      width: 1.2rem;
+      text-align: center;
+      border-radius: 50%;
+      background: #3b2a20;
+      color: #fff;
+      cursor: help;
+      font-size: .8rem;
+    }
+
+    .send {
+      display: inline-block;
+      background: #3b2a20;
+      color: #fff;
+      padding: .6rem 1.4rem;
+      cursor: pointer;
+      font: inherit;
+      border: 0;
+    }
+
+    .error {
+      color: red;
+      font-size: .8rem;
+    }
+
+    fieldset {
+      border: 0;
+      padding: 0;
+    }
+
+    :focus-visible {
+      outline: 3px solid #3b2a20;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 class="title">Latte Workshop</h1>
+    <div>Thursday, 3 December 2026 · 17:00 · max. 8 participants</div>
+
+    <form action="https://campus-cafe.example/book" method="post">
+      <div class="row">
+        <label for="name">Name (required)</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+
+      <div class="row">
+        <label for="email">E-mail (required)</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-hint">
+        <div id="email-hint">We send the confirmation to this address.</div>
+      </div>
+
+      <div class="row">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+
+      <div class="row">
+        <label for="people">Number of people</label>
+        <select id="people" name="people">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </div>
+
+      <fieldset class="row">
+        <legend>How should we contact you? (required)</legend>
+        <input type="radio" id="contact-email" name="contact" value="email" required> <label
+          for="contact-email">E-mail</label>
+        <input type="radio" id="contact-phone" name="contact" value="phone"> <label for="contact-phone">Phone</label>
+      </fieldset>
+
+      <fieldset class="row">
+        <legend>Milk:</legend>
+        <input type="checkbox" id="milk-cow" name="milk" value="cow"> <label for="milk-cow">Cow's milk</label><br>
+        <input type="checkbox" id="milk-oat" name="milk" value="oat"> <label for="milk-oat">Oat milk</label><br>
+        <input type="checkbox" id="milk-soy" name="milk" value="soy"> <label for="milk-soy">Soy milk</label>
+      </fieldset>
+
+      <div class="row">
+        <label for="msg">Message</label>
+        <textarea id="msg" name="msg"></textarea>
+      </div>
+
+      <div class="row">
+        <input type="checkbox" id="privacy" name="privacy" required> <label for="privacy">I accept the privacy policy
+          (required)</label> · <a href="#">Read the privacy policy</a>
+      </div>
+
+      <button type="submit" class="send">Book my place</button>
+    </form>
+  </main>
+</body>
+
+</html>
