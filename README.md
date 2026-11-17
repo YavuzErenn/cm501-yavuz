@@ -7,6 +7,7 @@ My coursework for **CM-501 Frontend Web Development** at MUDT. Every page in thi
 | Path | Contents |
 |---|---|
 | `index.html`, `about.html` | EPA 1: my personal profile site |
+| `epa1-report/` | EPA 1: delivery report on burulas.com.tr |
 | `epa2/` | EPA 2: accessibility repair of the Campus Café menu page |
 | `session-3/`, `session-4/` | Lab pages from the sessions |
 | `worksheets/` | Lab worksheets and homework |
@@ -18,6 +19,10 @@ My coursework for **CM-501 Frontend Web Development** at MUDT. Every page in thi
 A small two-page site about me: `index.html` lists websites I love and hate, `about.html` tells a bit about me and my hobbies. The pages link to each other.
 
 Live: https://yavuzerenn.github.io/cm501-yavuz/
+
+### EPA 1 · Delivery report
+
+A DevTools and Lighthouse analysis of https://www.burulas.com.tr (totals, largest files, images, third parties, render-blocking and unused code, headers): [epa1-report/REPORT.md](epa1-report/REPORT.md)
 
 ### EPA 2 · Repair the Campus Café
 
