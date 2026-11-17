@@ -44,7 +44,7 @@ Fill in **where** each feature is used (file and element or line). Must items (M
 | O7 | `<iframe>` with `title` (map, video), privacy considered | not planned |
 | O8 | `lang` on a passage in another language (e.g. `<span lang="de">`) | index.html l. 34 · `<span lang="tr">` motto |
 
-**Tests:** validator: 2026-11-17, 0 errors and 0 warnings on all 4 pages · axe (via Lighthouse 13.5 accessibility): 100 on all 4 pages, 0 violations · keyboard: TODO · screen reader: TODO
+**Tests:** validator: 2026-11-17, 0 errors and 0 warnings on all 4 pages · axe (via Lighthouse 13.5 accessibility): 100 on all 4 pages, 0 violations · keyboard (2026-11-18, local files): skip link is the first Tab stop, every link, field and the button are reachable with Tab, focus is always visible, the radio group is one Tab stop and the options change with the arrow keys · screen reader: TODO
 
 **AI use:** Claude (AI) built the quote form and the opening hours on the contact page, drew the Vanto 13 illustration, filled in this table and ran the validator and Lighthouse; I chose the topic and checked every change.
 
