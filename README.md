@@ -9,6 +9,7 @@ My coursework for **CM-501 Frontend Web Development** at MUDT. Every page in thi
 | `index.html`, `about.html` | EPA 1: my personal profile site |
 | `epa1-report/` | EPA 1: delivery report on burulas.com.tr |
 | `epa2/` | EPA 2: accessibility repair of the Campus Café menu page |
+| `project/` | Vanto: my course project, a site for a fictional campervan workshop in Bursa (HTML baseline) |
 | `session-3/`, `session-4/` | Lab pages from the sessions |
 | `worksheets/` | Lab worksheets and homework |
 

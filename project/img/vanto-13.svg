@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <rect width="640" height="360" fill="#dbe9f4"/>
+  <circle cx="540" cy="70" r="36" fill="#f6c453"/>
+  <path d="M0 250 L120 170 L230 230 L360 150 L480 220 L640 160 L640 360 L0 360 Z" fill="#9cb98a"/>
+  <rect x="0" y="282" width="640" height="78" fill="#6b6f74"/>
+  <rect x="0" y="318" width="640" height="6" fill="#e9e9e9"/>
+  <path d="M120 300 L120 170 Q120 150 140 150 L420 150 Q460 150 480 190 L500 230 Q520 236 520 256 L520 300 Z" fill="#fdfdfd" stroke="#2f3a45" stroke-width="4"/>
+  <rect x="120" y="222" width="400" height="14" fill="#d9822b"/>
+  <rect x="150" y="172" width="90" height="38" rx="6" fill="#8fb8d8" stroke="#2f3a45" stroke-width="3"/>
+  <rect x="260" y="172" width="90" height="38" rx="6" fill="#8fb8d8" stroke="#2f3a45" stroke-width="3"/>
+  <path d="M410 172 L440 172 Q458 172 468 196 L474 212 L410 212 Z" fill="#8fb8d8" stroke="#2f3a45" stroke-width="3"/>
+  <rect x="362" y="168" width="36" height="110" rx="4" fill="none" stroke="#2f3a45" stroke-width="3"/>
+  <circle cx="200" cy="300" r="30" fill="#2f3a45"/>
+  <circle cx="200" cy="300" r="12" fill="#c9ced3"/>
+  <circle cx="440" cy="300" r="30" fill="#2f3a45"/>
+  <circle cx="440" cy="300" r="12" fill="#c9ced3"/>
+  <text x="170" y="268" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2f3a45">VANTO 13</text>
+</svg>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact and quote · Vanto</title>
+  <meta name="description" content="Request a quote for a Vanto motorhome or caravan, or find our address and opening hours.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- The only CSS before EPA 3: touch targets of at least 24 × 24 px (WCAG 2.2, 2.5.8). -->
+  <style>nav a, summary { display: inline-block; min-height: 24px; padding-block: 4px; }</style>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><a href="index.html">Vanto</a></p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html" aria-current="page">Contact and quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Contact us and request a quote</h1>
+    <p>Tell us about your van and we send you a quote within two working days.</p>
+
+    <section aria-labelledby="quote-heading">
+      <h2 id="quote-heading">Request a quote</h2>
+      <p>Fields marked "(required)" must be filled in.</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="name">Name (required)</label><br>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="email">E-mail (required)</label><br>
+          <span id="email-hint">We send the quote to this address.</span><br>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+        </p>
+
+        <p>
+          <label for="phone">Phone</label><br>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </p>
+
+        <p>
+          <label for="city">City</label><br>
+          <input id="city" name="city" type="text" autocomplete="address-level2">
+        </p>
+
+        <fieldset>
+          <legend>What would you like? (required)</legend>
+          <input id="wish-convert" name="wish" type="radio" value="convert" required>
+          <label for="wish-convert">Convert my own van</label><br>
+          <input id="wish-motorhome" name="wish" type="radio" value="motorhome">
+          <label for="wish-motorhome">A new Vanto motorhome</label><br>
+          <input id="wish-caravan" name="wish" type="radio" value="caravan">
+          <label for="wish-caravan">A towed caravan</label>
+        </fieldset>
+
+        <p>
+          <label for="van">The van you own</label><br>
+          <span id="van-hint">Model and year, for example Fiat Ducato, 2019.</span><br>
+          <input id="van" name="van" type="text" aria-describedby="van-hint">
+        </p>
+
+        <p>
+          <label for="size">Motorhome size</label><br>
+          <select id="size" name="size">
+            <option value="">Not sure yet</option>
+            <option value="8">Vanto 8 (8 m³)</option>
+            <option value="10">Vanto 10 (10 m³)</option>
+            <option value="13">Vanto 13 (13 m³)</option>
+            <option value="15">Vanto 15 (15 m³)</option>
+            <option value="17">Vanto 17 (17 m³)</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="message">Your message</label><br>
+          <textarea id="message" name="message" rows="5" cols="40"></textarea>
+        </p>
+
+        <p>
+          <input id="privacy" name="privacy" type="checkbox" required>
+          <label for="privacy">I agree that Vanto uses my data only to answer this request (required)</label>
+        </p>
+
+        <p><button type="submit">Send quote request</button></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="hours-heading">
+      <h2 id="hours-heading">Opening hours of the workshop</h2>
+      <dl>
+        <dt>Monday to Friday</dt>
+        <dd><time datetime="09:00">9:00</time> to <time datetime="18:00">18:00</time></dd>
+        <dt>Saturday</dt>
+        <dd><time datetime="10:00">10:00</time> to <time datetime="14:00">14:00</time></dd>
+        <dt>Sunday</dt>
+        <dd>Closed</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      Vanto Campervans<br>
+      Sample Street 12, 16000 Bursa, Türkiye<br>
+      <a href="tel:+900000000000">+90 000 000 00 00</a> ·
+      <a href="mailto:hello@example.com">hello@example.com</a>
+    </address>
+    <p><small>© 2026 Vanto · Student project for CM-501, fictional company</small></p>
+  </footer>
+</body>
+</html>
