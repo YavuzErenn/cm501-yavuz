@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- Vanto · CM-501 project (HTML baseline, Session 4 · Lab G)
+     Fictional company. Checklist: README.md (section "HTML baseline"). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home · Vanto</title>
+  <meta name="description" content="Vanto builds motorhomes and towed caravans in Bursa. Compare our models, meet us at a trade fair and request a quote.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- The only CSS before EPA 3: touch targets of at least 24 × 24 px (WCAG 2.2, 2.5.8). -->
+  <style>nav a, summary { display: inline-block; min-height: 24px; padding-block: 4px; }</style>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><a href="index.html">Vanto</a></p>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact and quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Campervans built in Bursa, made for the open road</h1>
+    <p>Vanto turns everyday vans into compact motorhomes and builds light caravans you can tow with a normal car. Every vehicle is planned with you and built by hand in our workshop.</p>
+    <!-- O8: a passage in another language -->
+    <p>Our motto: <span lang="tr">Yola çıkma zamanı</span> (it is time to hit the road).</p>
+
+    <section aria-labelledby="build-heading">
+      <h2 id="build-heading">What we build</h2>
+      <ul>
+        <li>
+          <article>
+            <h3>Motorhomes</h3>
+            <p>We convert your van into a motorhome with a bed, a kitchen and a toilet, in five sizes from 8 to 17 m³. A class B licence is enough to drive it.</p>
+            <p><a href="models.html#motorhomes">Compare our motorhome sizes</a></p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Towed caravans</h3>
+            <p>Our caravans weigh less than 750 kg, so you can tow them without a special licence. Two lengths: 4 m and 5.3 m.</p>
+            <p><a href="models.html#caravans">See our caravan models</a></p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="fairs-heading">
+      <h2 id="fairs-heading">Meet us at a trade fair</h2>
+      <ul>
+        <li>
+          <article>
+            <h3>Bursa Outdoor and Caravan Days</h3>
+            <p><time datetime="2027-03-12">12</time> to <time datetime="2027-03-14">14 March 2027</time> · Bursa</p>
+            <p>Step inside our Vanto 13 motorhome and the new Trailer 530.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Aegean Camping Fair</h3>
+            <p><time datetime="2027-04-23">23</time> to <time datetime="2027-04-25">25 April 2027</time> · İzmir</p>
+            <p>Bring your questions about converting your own van.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      Vanto Campervans<br>
+      Sample Street 12, 16000 Bursa, Türkiye<br>
+      <a href="tel:+900000000000">+90 000 000 00 00</a> ·
+      <a href="mailto:hello@example.com">hello@example.com</a>
+    </address>
+    <p><small>© 2026 Vanto · Student project for CM-501, fictional company</small></p>
+  </footer>
+</body>
+</html>
