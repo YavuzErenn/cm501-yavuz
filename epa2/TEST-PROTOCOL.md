@@ -16,7 +16,7 @@ EPA 2 · CM-501 Frontend Web Development · Yavuz Eren Yasar
 | 5 | both | Only `div`s, no landmarks, no skip link | 1.3.1, 2.4.1 | `header`, `nav`, `main`, `footer` and a skip link |
 | 6 | both | `outline: none` hides the focus | 2.4.7 | Removed it and added a `:focus-visible` outline |
 | 7 | both | Light grey text on white, dark text on the dark header | 1.4.3 | New colours with at least 4.5 : 1 |
-| 8 | both | Social icons link to `#` and have no name | 2.4.4, 4.1.2 | Real links with `aria-label="Campus Café on …"`, icon has `aria-hidden="true"` |
+| 8 | both | Social icons link to `#` and have no name | 2.4.4, 4.1.2 | Real links with `aria-label="Facebook"` and `aria-label="Instagram"`, icon has `aria-hidden="true"` |
 | 9 | menu | Headings jump from `h1` to `h4` | 1.3.1 | `h1` for the page, `h2` for each section |
 | 10 | menu | Layout table, `<font>`, `<b>`, `<i>` | 1.3.1 | Lists inside sections, `<strong>` for the names, prices as normal text |
 | 11 | menu | Today's special is only inside an image with no `alt` | 1.1.1 | The special is now text, the image has `alt=""` |
@@ -73,11 +73,15 @@ The tools did **not** find these problems on the old contact page: fields with o
 
 ## C4 · Peer test
 
-Tester: TODO · Date: TODO · Sheet: `peer-test-protocol.pdf`
+Tester - Haluk. Screen reader - Narrator. Screen reader tested.
 
-| What my tester found | WCAG | How bad | What I changed |
-|----------------------|------|---------|----------------|
-| TODO | | | |
+What Haluk found and what I did
+
+1. Both pages, the skip link can not be seen when it gets focus. WCAG 2.4.7, 2.4.11, serious. He was right, the skip link was behind the header. I added `z-index: 1` to `.skip:focus`, now it shows on top.
+2. Both pages, at 200 % zoom you have to scroll sideways. WCAG 1.4.10, serious. I did not change this. The page is fixed at 1100 px and the brief says the layout may stay, responsive layout is part of EPA 3.
+3. Both pages, the social links are called Campus Café on Facebook and Instagram, but they go to the Facebook and Instagram home pages. WCAG 2.4.4, minor. I changed the names to Facebook and Instagram.
+
+Haluk liked the clear labels and prices.
 
 ## C5 · Limits of the tools
 
