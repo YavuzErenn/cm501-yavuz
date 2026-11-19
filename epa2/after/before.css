@@ -4,7 +4,7 @@
 body { margin: 0; background: #fff; font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif; font-weight: 200; font-size: 13px; color: #333; }
 #wrap { width: 1100px; margin: 0 auto; }
 .skip { position: absolute; left: -9999px; top: 0; background: #fff; color: #3b2a20; padding: 8px 12px; }
-.skip:focus { left: 8px; top: 8px; }
+.skip:focus { left: 8px; top: 8px; z-index: 1; }
 .top { background: #3b2a20; height: 90px; position: relative; }
 .logo { font-family: 'Lobster', 'Brush Script MT', cursive; font-size: 44px; color: #f3e6d8; position: absolute; left: 20px; top: 16px; }
 .nav { position: absolute; right: 10px; top: 34px; }
