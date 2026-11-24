@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- Vanto · style guide (EPA 3 Part A), based on cm501-labs/session-06/styleguide-template.html.
+     The tokens themselves live in style.css; this page shows them. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style guide · Vanto</title>
+  <meta name="description" content="The design system of the Vanto website: colours, typography, spacing, components and breakpoints.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* style-guide helpers (only for this page) */
+    .guide > section { margin-block-end: var(--space-6); }
+    .guide h3 { margin-block-start: var(--space-5); }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
+      gap: var(--space-3);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .swatch { border: var(--border-width) solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+    .swatch div { height: var(--space-6); }
+    .swatch p { margin: 0; padding: var(--space-2); font-size: var(--step--1); }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; }
+    th, td { padding: var(--space-2) var(--space-3); border-bottom: var(--border-width) solid var(--color-surface); text-align: start; }
+    .sample { margin-block: 0 var(--space-2); line-height: var(--leading-tight); font-weight: 700; }
+    .spaces { display: grid; gap: var(--space-2); margin-block-end: var(--space-3); }
+    .spaces div { display: flex; align-items: center; gap: var(--space-3); font-size: var(--step--1); }
+    .spaces span { display: block; height: var(--space-3); background: var(--color-brand); }
+    .demo-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+    .demo-cards { max-width: 40rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <p class="logo"><a href="index.html">Vanto</a></p>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact and quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="guide">
+    <h1>Style guide: Vanto</h1>
+    <p>Vanto is for couples and families who dream of travelling by van. The site should feel warm, handmade and ready for the road: the colours come from our Vanto 13 drawing (the orange stripe, the green hills, the dark road), and the layout stays calm so the models and dates are easy to find.</p>
+
+    <section aria-labelledby="colours">
+      <h2 id="colours">Colours</h2>
+      <p>All colour tokens are defined once in <code>style.css</code>. In dark mode (<code>prefers-color-scheme: dark</code>) only these values change; switch your system to dark mode to see this page change.</p>
+      <ul class="swatches">
+        <li class="swatch"><div style="background: var(--color-text)"></div><p><code>--color-text</code><br>light #1f2a33 · dark #ece6dc</p></li>
+        <li class="swatch"><div style="background: var(--color-muted)"></div><p><code>--color-muted</code><br>light #5b6670 · dark #b3bcc4</p></li>
+        <li class="swatch"><div style="background: var(--color-bg)"></div><p><code>--color-bg</code><br>light #fbf8f3 · dark #161c21</p></li>
+        <li class="swatch"><div style="background: var(--color-surface)"></div><p><code>--color-surface</code><br>light #f1ece3 · dark #222b32</p></li>
+        <li class="swatch"><div style="background: var(--color-border)"></div><p><code>--color-border</code><br>light #857a6b · dark #7d8a94</p></li>
+        <li class="swatch"><div style="background: var(--color-brand)"></div><p><code>--color-brand</code><br>light #b4470f · dark #f08a4b</p></li>
+        <li class="swatch"><div style="background: var(--color-brand-hover)"></div><p><code>--color-brand-hover</code><br>light #8f380c · dark #f6a878</p></li>
+        <li class="swatch"><div style="background: var(--color-brand-contrast)"></div><p><code>--color-brand-contrast</code><br>light #ffffff · dark #161c21</p></li>
+        <li class="swatch"><div style="background: var(--color-accent)"></div><p><code>--color-accent</code><br>light #2f6b3f · dark #8fd19e</p></li>
+      </ul>
+
+      <h3>Contrast ratios</h3>
+      <p>Needed: 4.5 : 1 for normal text, 3 : 1 for large text and UI parts (WCAG 1.4.3 and 1.4.11). Calculated with the WCAG formula and checked in the DevTools colour picker.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Contrast of each colour pair, light and dark mode</caption>
+          <thead>
+            <tr><th scope="col">Pair</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Needed</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">text on bg</th><td>13.8 : 1</td><td>13.8 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">text on surface</th><td>12.4 : 1</td><td>11.6 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">muted on bg</th><td>5.5 : 1</td><td>8.9 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">muted on surface</th><td>5.0 : 1</td><td>7.5 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">brand-contrast on brand (button)</th><td>5.5 : 1</td><td>6.9 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">brand-contrast on brand-hover</th><td>7.7 : 1</td><td>8.8 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">accent on bg (links, focus)</th><td>6.0 : 1</td><td>9.6 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">accent on surface (links in cards)</th><td>5.4 : 1</td><td>8.1 : 1</td><td>4.5 : 1</td></tr>
+            <tr><th scope="row">brand on bg (header line)</th><td>5.2 : 1</td><td>6.9 : 1</td><td>3 : 1</td></tr>
+            <tr><th scope="row">border on bg</th><td>4.0 : 1</td><td>4.9 : 1</td><td>3 : 1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="type">
+      <h2 id="type">Typography</h2>
+      <p>Font: <code>system-ui</code> (Segoe UI on Windows, San Francisco on Apple, Roboto on Android) for headings and body. Why: nothing to download, so the page is fast on mobile data at a camp site, and every system font is made to be readable on its own screens. Headings get their character from weight 700–800, not from a second font.</p>
+      <p>Headings are fluid with <code>clamp()</code>: they grow with the screen between a minimum and a maximum. Body text stays at 1rem so the user's browser font size is respected. Paragraphs are at most <code>65ch</code> wide (<code>--measure</code>).</p>
+      <p class="sample" style="font-size: var(--step-3)">Heading 1 · --step-3 · 2rem to 3.25rem</p>
+      <p class="sample" style="font-size: var(--step-2)">Heading 2 · --step-2 · 1.5rem to 2.125rem</p>
+      <p class="sample" style="font-size: var(--step-1)">Heading 3 · --step-1 · 1.25rem to 1.5rem</p>
+      <p>Body text · --step-0 · 1rem, line height 1.5. Every Vanto is planned with you and built by hand in Bursa. <a href="#type">A text link</a>.</p>
+      <p style="font-size: var(--step--1)">Small print · --step--1 · 0.875rem, for captions and the footer note.</p>
+    </section>
+
+    <section aria-labelledby="space">
+      <h2 id="space">Spacing</h2>
+      <p>Six steps. Only these values are used for margins, paddings and gaps.</p>
+      <div class="spaces">
+        <div><span style="width: var(--space-1)"></span><code>--space-1</code> 0.25rem</div>
+        <div><span style="width: var(--space-2)"></span><code>--space-2</code> 0.5rem</div>
+        <div><span style="width: var(--space-3)"></span><code>--space-3</code> 1rem</div>
+        <div><span style="width: var(--space-4)"></span><code>--space-4</code> 1.5rem</div>
+        <div><span style="width: var(--space-5)"></span><code>--space-5</code> 2.5rem</div>
+        <div><span style="width: var(--space-6)"></span><code>--space-6</code> 4rem</div>
+      </div>
+      <p>Other sizes: <code>--radius</code> 0.5rem, <code>--radius-pill</code> for buttons, <code>--border-width</code> 0.125rem, <code>--focus-width</code> 0.1875rem, <code>--target-min</code> 1.5rem (24 px touch targets), <code>--max-width</code> 72rem.</p>
+    </section>
+
+    <section aria-labelledby="components">
+      <h2 id="components">Components</h2>
+
+      <h3>Button</h3>
+      <div class="demo-row">
+        <a class="button" href="#components">Link styled as a button</a>
+        <button class="button" type="button">Button</button>
+        <button class="button" type="button" disabled>Disabled</button>
+      </div>
+      <p>States: default (orange), <code>:hover</code> (darker orange), <code>:focus-visible</code> (green ring, press <kbd>Tab</kbd>), <code>:disabled</code> (half transparent). Used for the main action in a card.</p>
+
+      <h3>Card</h3>
+      <ul class="cards demo-cards">
+        <li>
+          <article class="card">
+            <h4>Motorhomes</h4>
+            <p>Sand background, orange top border. Content is a column (Flexbox), so the button always sits at the bottom, even when cards in a row have different text lengths.</p>
+            <p class="card-action"><a class="button" href="#components">Card action</a></p>
+          </article>
+        </li>
+      </ul>
+
+      <h3>Navigation</h3>
+      <nav aria-label="Example">
+        <ul class="nav-list">
+          <li><a href="#components" aria-current="page">Current page</a></li>
+          <li><a href="#components">Other page</a></li>
+          <li><a href="#components">Another page</a></li>
+        </ul>
+      </nav>
+      <p>States: default (text colour), <code>:hover</code> (green and underlined), current page (<code>aria-current="page"</code>: green with a thick underline, so it does not rely on colour alone), <code>:focus-visible</code> (green ring). The list wraps onto a second line on narrow screens.</p>
+
+      <h3>Date</h3>
+      <p class="date"><time datetime="2027-03-12">12</time> to <time datetime="2027-03-14">14 March 2027</time> · Bursa</p>
+      <p>Muted colour and weight 600, so dates stand out from the text but not more than the heading.</p>
+    </section>
+
+    <section aria-labelledby="breakpoints">
+      <h2 id="breakpoints">Breakpoints</h2>
+      <p>Mobile first: the base styles are for small screens (from 320 px). Breakpoints are in <code>rem</code>, so they also move when users zoom or set a larger font, and they sit where the Vanto content breaks, not at device widths.</p>
+      <ul>
+        <li><strong>Under 40rem:</strong> everything in one column; the navigation wraps below the logo; cards stack.</li>
+        <li><strong>40rem (≈ 640 px):</strong> the intro text and the motto fit next to each other.</li>
+        <li><strong>60rem (≈ 960 px):</strong> the two "What we build" cards and the drawing sit side by side; below that the drawing would be smaller than the cards.</li>
+        <li><strong>Without a breakpoint:</strong> the trade fair cards use <code>repeat(auto-fill, minmax(min(16rem, 100%), 1fr))</code>, so they make as many columns as fit.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <address>
+      Vanto Campervans<br>
+      Sample Street 12, 16000 Bursa, Türkiye<br>
+      <a href="tel:+900000000000">+90 000 000 00 00</a> ·
+      <a href="mailto:hello@example.com">hello@example.com</a>
+    </address>
+    <p><small>© 2026 Vanto · Student project for CM-501, fictional company</small></p>
+  </footer>
+</body>
+</html>
