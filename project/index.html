@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Vanto · CM-501 project (HTML baseline, Session 4 · Lab G)
+<!-- Vanto · CM-501 project (HTML baseline Lab G, styled in EPA 3 with style.css)
      Fictional company. Checklist: README.md (section "HTML baseline"). -->
 <html lang="en">
 <head>
@@ -8,17 +8,16 @@
   <title>Home · Vanto</title>
   <meta name="description" content="Vanto builds motorhomes and towed caravans in Bursa. Compare our models, meet us at a trade fair and request a quote.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <!-- The only CSS before EPA 3: touch targets of at least 24 × 24 px (WCAG 2.2, 2.5.8). -->
-  <style>nav a, summary { display: inline-block; min-height: 24px; padding-block: 4px; }</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header>
-    <p><a href="index.html">Vanto</a></p>
+  <header class="site-header">
+    <p class="logo"><a href="index.html">Vanto</a></p>
 
     <nav aria-label="Main">
-      <ul>
+      <ul class="nav-list">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="models.html">Models</a></li>
         <li><a href="about.html">About us</a></li>
@@ -28,26 +27,28 @@
   </header>
 
   <main id="main">
-    <h1>Campervans built in Bursa, made for the open road</h1>
-    <p>Vanto turns everyday vans into compact motorhomes and builds light caravans you can tow with a normal car. Every vehicle is planned with you and built by hand in our workshop.</p>
-    <!-- O8: a passage in another language -->
-    <p>Our motto: <span lang="tr">Yola çıkma zamanı</span> (it is time to hit the road).</p>
+    <div class="intro">
+      <h1>Campervans built in Bursa, made for the open road</h1>
+      <p>Vanto turns everyday vans into compact motorhomes and builds light caravans you can tow with a normal car. Every vehicle is planned with you and built by hand in our workshop.</p>
+      <!-- O8: a passage in another language -->
+      <p class="motto">Our motto: <span lang="tr">Yola çıkma zamanı</span> (it is time to hit the road).</p>
+    </div>
 
-    <section aria-labelledby="build-heading">
+    <section class="build" aria-labelledby="build-heading">
       <h2 id="build-heading">What we build</h2>
-      <ul>
+      <ul class="cards">
         <li>
-          <article>
+          <article class="card">
             <h3>Motorhomes</h3>
             <p>We convert your van into a motorhome with a bed, a kitchen and a toilet, in five sizes from 8 to 17 m³. A class B licence is enough to drive it.</p>
-            <p><a href="models.html#motorhomes">Compare our motorhome sizes</a></p>
+            <p class="card-action"><a class="button" href="models.html#motorhomes">Compare our motorhome sizes</a></p>
           </article>
         </li>
         <li>
-          <article>
+          <article class="card">
             <h3>Towed caravans</h3>
             <p>Our caravans weigh less than 750 kg, so you can tow them without a special licence. Two lengths: 4 m and 5.3 m.</p>
-            <p><a href="models.html#caravans">See our caravan models</a></p>
+            <p class="card-action"><a class="button" href="models.html#caravans">See our caravan models</a></p>
           </article>
         </li>
       </ul>
@@ -60,18 +61,18 @@
 
     <section aria-labelledby="fairs-heading">
       <h2 id="fairs-heading">Meet us at a trade fair</h2>
-      <ul>
+      <ul class="cards">
         <li>
-          <article>
+          <article class="card">
             <h3>Bursa Outdoor and Caravan Days</h3>
-            <p><time datetime="2027-03-12">12</time> to <time datetime="2027-03-14">14 March 2027</time> · Bursa</p>
+            <p class="date"><time datetime="2027-03-12">12</time> to <time datetime="2027-03-14">14 March 2027</time> · Bursa</p>
             <p>Step inside our Vanto 13 motorhome and the new Trailer 530.</p>
           </article>
         </li>
         <li>
-          <article>
+          <article class="card">
             <h3>Aegean Camping Fair</h3>
-            <p><time datetime="2027-04-23">23</time> to <time datetime="2027-04-25">25 April 2027</time> · İzmir</p>
+            <p class="date"><time datetime="2027-04-23">23</time> to <time datetime="2027-04-25">25 April 2027</time> · İzmir</p>
             <p>Bring your questions about converting your own van.</p>
           </article>
         </li>
@@ -79,7 +80,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <address>
       Vanto Campervans<br>
       Sample Street 12, 16000 Bursa, Türkiye<br>
