@@ -1,0 +1,290 @@
+/* Vanto · style.css (EPA 3)
+   One stylesheet for the site. Every colour, size and space comes from the
+   tokens in part 1 (shown in styleguide.html).
+   Mobile first: the normal rules are for small screens; the media queries in
+   part 5 add layout when the screen is wider (40rem and 60rem). */
+
+/* 1 · TOKENS ------------------------------------------------------------ */
+:root {
+  /* colours (contrast ratios in styleguide.html) */
+  --color-text: #1f2a33;           /* dark blue-grey, from the Vanto 13 drawing */
+  --color-muted: #5b6670;          /* grey text, e.g. dates */
+  --color-bg: #fbf8f3;             /* warm off-white page background */
+  --color-surface: #f1ece3;        /* sand: cards */
+  --color-border: #857a6b;         /* borders */
+  --color-brand: #b4470f;          /* burnt orange: buttons and lines */
+  --color-brand-hover: #8f380c;    /* darker orange when the mouse is on a button */
+  --color-brand-contrast: #ffffff; /* text on an orange button */
+  --color-accent: #2f6b3f;         /* forest green: links and the focus ring */
+
+  /* typography */
+  --font-body: system-ui, sans-serif;
+  --font-display: system-ui, sans-serif;
+  --step--1: 0.875rem;                                /* small text */
+  --step-0: 1rem;                                     /* body text */
+  --step-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);   /* h3 */
+  --step-2: clamp(1.5rem, 1.25rem + 1.2vw, 2.125rem); /* h2 */
+  --step-3: clamp(2rem, 1.4rem + 3vw, 3.25rem);       /* h1 */
+  --leading: 1.5;          /* line height of body text */
+  --leading-tight: 1.2;    /* line height of headings */
+  --measure: 65ch;         /* readable line length */
+
+  /* spacing: only these values for margin, padding and gap */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+
+  /* other sizes */
+  --radius: 0.5rem;        /* rounded corners of cards */
+  --radius-pill: 999rem;   /* fully round ends of buttons */
+  --border-width: 0.125rem;
+  --focus-width: 0.1875rem;
+  --target-min: 1.5rem;    /* 24 px touch targets (WCAG 2.5.8) */
+  --max-width: 72rem;      /* the page never gets wider than this */
+}
+
+/* dark mode: only the colour tokens change, all other rules stay the same */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #ece6dc;
+    --color-muted: #b3bcc4;
+    --color-bg: #161c21;
+    --color-surface: #222b32;
+    --color-border: #7d8a94;
+    --color-brand: #f08a4b;
+    --color-brand-hover: #f6a878;
+    --color-brand-contrast: #161c21;
+    --color-accent: #8fd19e;
+  }
+}
+
+/* 2 · BASE -------------------------------------------------------------- */
+/* width includes padding and border (box model, Session 5) */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: var(--leading);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+h1 { font-size: var(--step-3); }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+  max-width: var(--measure);
+}
+
+a { color: var(--color-accent); }
+
+/* images never get wider than their box */
+img { max-width: 100%; height: auto; }
+
+/* a green ring around whatever has keyboard focus */
+:focus-visible {
+  outline: var(--focus-width) solid var(--color-accent);
+  outline-offset: var(--space-1);
+}
+
+/* touch targets of at least 24 × 24 px */
+nav a, summary {
+  display: inline-block;
+  min-height: var(--target-min);
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+}
+
+/* 3 · PAGE LAYOUT (Grid) ------------------------------------------------ */
+/* header, main and footer: same maximum width, centred, space at the sides */
+.site-header,
+main,
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+main {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+}
+
+/* skip link: far off the screen until it gets keyboard focus (same idea as EPA 2) */
+.skip-link {
+  position: absolute;
+  left: -100rem;
+  top: var(--space-2);
+  z-index: 1;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+  border-radius: var(--radius);
+}
+.skip-link:focus { left: var(--space-2); }
+
+/* intro: big heading, text and motto */
+.intro { margin-bottom: var(--space-5); }
+
+/* "What we build": on small screens heading, cards and drawing are stacked */
+.build {
+  display: grid;
+  grid-template-areas:
+    "heading"
+    "cards"
+    "figure";
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.build h2 { grid-area: heading; margin: 0; }
+.build .cards { grid-area: cards; }
+.build figure { grid-area: figure; }
+
+/* card grid: as many columns as fit, each at least 16rem (Lab I) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 4 · COMPONENTS (Flexbox inside) --------------------------------------- */
+/* header: logo left, navigation right; the nav wraps below on narrow screens (Lab H) */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-width) solid var(--color-brand);
+}
+
+.logo {
+  margin: 0;
+  font-size: var(--step-1);
+  font-weight: 800;
+}
+.logo a { color: var(--color-text); text-decoration: none; }
+
+/* navigation: links in a row with space between */
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-list a { color: var(--color-text); font-weight: 600; text-decoration: none; }
+.nav-list a:hover { color: var(--color-accent); text-decoration: underline; }
+/* the page you are on: green and underlined, so it does not rely on colour alone */
+.nav-list a[aria-current="page"] { color: var(--color-accent); text-decoration: underline; }
+
+/* card: content in a column, the button always at the bottom (Lab H) */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border-top: var(--border-width) solid var(--color-brand);
+  border-radius: var(--radius);
+}
+.card-action { margin-top: auto; margin-bottom: 0; }
+
+/* date: grey and a bit bold */
+.date { color: var(--color-muted); font-weight: 600; }
+
+/* button: a link or a <button> that looks like a button */
+.button {
+  display: inline-block;
+  min-height: var(--target-min);
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { background: var(--color-brand-hover); }
+.button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* motto: an orange line on the left, in italics */
+.motto {
+  padding-left: var(--space-3);
+  border-left: var(--border-width) solid var(--color-brand);
+  font-style: italic;
+}
+
+/* drawing with its caption */
+figure { margin: 0; }
+figure img { display: block; width: 100%; border-radius: var(--radius); }
+figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--step--1);
+}
+
+/* footer: address left, note right (wraps below on narrow screens) */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-top: var(--border-width) solid var(--color-brand);
+}
+.site-footer address { font-style: normal; }
+.site-footer p { margin: 0; }
+
+/* 5 · BREAKPOINTS -------------------------------------------------------- */
+/* 40rem (about 640 px): the intro text and the motto fit side by side */
+@media (min-width: 40rem) {
+  .intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "heading heading"
+      "text    motto";
+    column-gap: var(--space-5);
+    align-items: end;
+  }
+  .intro h1 { grid-area: heading; }
+  .intro p { grid-area: text; }
+  .intro .motto { grid-area: motto; }   /* .intro .motto is more specific than .intro p, so it wins */
+}
+
+/* 60rem (about 960 px): the cards and the drawing fit side by side */
+@media (min-width: 60rem) {
+  .build {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "heading heading"
+      "cards   figure";
+    align-items: start;
+  }
+  .build .cards { grid-template-columns: 1fr; }
+}
