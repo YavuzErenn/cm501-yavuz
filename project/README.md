@@ -48,6 +48,10 @@ Fill in **where** each feature is used (file and element or line). Must items (M
 
 **AI use:** I used an AI assistant to explain HTML and to review my code. It also generated the models and the people for the site (model specs, floor plan, team and FAQ), the quote form and the Vanto 13 drawing. I chose the topic, checked every change and can explain every line.
 
+## Design (EPA 3)
+
+Vanto is for couples and families who dream of travelling by van, so the site should feel warm, handmade and ready for the road. The colours come from our Vanto 13 drawing: burnt orange for buttons, forest green for links and the focus ring, and a warm off-white and sand background; every text colour has at least 5 : 1 contrast, and dark mode only changes the colour tokens. I use system fonts, so nothing has to download on slow mobile data, and fluid headings with `clamp()` and a line length of at most `65ch` keep the text readable. The home page is mobile first, with Grid for the page layout and Flexbox inside the header, cards and footer. It changes at 40rem (intro text and motto side by side) and 60rem (the cards next to the drawing), because that is where the content has room. All colours, font sizes and spaces are tokens in `style.css` and documented in `styleguide.html`. The pages were tested at 320, 768, 1280 and 1920 px and at 400 % zoom in light and dark mode (no horizontal scrolling), contrast was calculated with the WCAG formula, and both pages pass the W3C validator. AI use: I built the design step by step with an AI assistant: I chose the colours, fonts, dark mode and plain CSS, the assistant wrote the CSS and the style guide, and I reviewed each part, had it simplified to what we learned in class, and tested it.
+
 ## Swap list: fictional → real (only with permission)
 
 Every place that has to change if the real company agrees:
